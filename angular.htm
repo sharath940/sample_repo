@@ -1,0 +1,42 @@
+<html>
+<head>
+<script src="angular.js"></script>
+
+
+</head>
+
+<body>
+<script type="text/javascript">
+var app = angular.module("myModule",[]);
+
+app.controller("myController1",function($rootScope,$scope){
+$scope.employee={"empid":101,"empname":"sharath"};
+
+$rootScope.message1="this is message1";
+});
+app.controller("myController2",function($rootScope,$scope){
+$scope.student = {"studid":201,"stuname":"xyz"};
+$rootScope.message2="this is message2";
+});
+
+</script>
+	<div ng-app="myModule" >
+		<div ng-controller="myController1">
+		{{message1}}
+		{{message2}}
+		{{employee.empid}}<br/>
+		{{employee.empname}}<br/>
+		</div>
+		<div ng-controller="myController2">
+		{{message1}}
+		{{message2}}
+		{{student.studid}}<br />
+		{{student.stuname}}<br />
+		</div>
+		{{message1}}
+		{{message2}}
+		
+		
+	</div>
+</body>
+</html>
